@@ -113,7 +113,9 @@ class BasicDataGrid():
         if self.withcounter:
             renderer = Gtk.CellRendererText()
             renderer.set_alignment(1,0)
+            renderer.set_property("background-rgba", Gdk.RGBA(red=0.8, green=0.8, blue=0.8, alpha=1.0))
             column = Gtk.TreeViewColumn('N', renderer, text=len(self.columns))
+
             column.set_sort_column_id(len(self.columns))
             self.thegrid.append_column(column)
         for acolumn in self.columns:
